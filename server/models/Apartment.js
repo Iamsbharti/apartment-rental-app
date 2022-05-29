@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
+const User = require("./User");
+
 let apartmentSchema = mongoose.Schema({
   apartmentId: {
+    type: String,
+    required: true,
+  },
+  name: {
     type: String,
     required: true,
   },
@@ -20,21 +26,27 @@ let apartmentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  monthlyRent: {
+  rent: {
     type: Number,
     required: true,
   },
-  securityDeposit: {
+  deposit: {
     type: Number,
     default: 1,
   },
-  interestCount: {
-    type: Number,
-    default: 0,
+  owned: {
+    type: Boolean,
+    default: false,
   },
   postedOn: {
     type: Date,
     default: Date.now(),
   },
+  interestedUsers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 module.exports = mongoose.model("Apartment", apartmentSchema);

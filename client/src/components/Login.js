@@ -46,7 +46,7 @@ class Login extends React.Component {
           loginResponse: `Authentication Success :: Redirecting to home...`,
         });
         setTimeout(() => {
-          this.props.history.push("/home");
+          this.props.history.push("/apartment");
         }, 1500);
       } else {
         this.setState({

@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
 import Apartment from "./components/Apartment";
 import Home from "./components/Home";
+import AddApartment from "./components/AddApartment";
 function App() {
   return (
     <React.Fragment>
@@ -15,7 +16,8 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
-        <Route path="/home" exact component={Apartment} />
+        <Route path="/apartment" exact component={Apartment} />
+        <Route path="/add" exact component={AddApartment} />
       </Switch>
       <Footer />
       <ToastContainer autoClose={3000} hideProgressBar />

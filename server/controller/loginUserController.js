@@ -33,7 +33,18 @@ const loginUserControl = async (req, res) => {
     ? { email: loginId }
     : { mobile: loginId };
 
-  let isUserPresent = await User.findOne(userQuery);
+  let isUserPresent = await User.findOne(userQuery).populate([
+    {
+      path: "apartmentPosts",
+      populate: [
+        {
+          path: "apartment",
+          model: "Apartments",
+          select: ["_id", "apartmentId"],
+        },
+      ],
+    },
+  ]);
   if (!isUserPresent || isUserPresent.length <= 0) {
     return res
       .status(404)

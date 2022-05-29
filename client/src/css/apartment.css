@@ -6,3 +6,44 @@
   background-size: cover;
   max-width: 100%;
 }
+.apartments {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 40px;
+  margin-top: -20px;
+}
+.apartment-post-card {
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 9px;
+  width: 500px;
+  height: auto;
+  margin-left: 18px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  align-self: flex-start;
+  background-size: cover;
+  border-radius: 10px;
+  background: linear-gradient(315deg, #cacaca, #f0f0f0);
+}
+.name {
+  font-weight: 600;
+}
+.apartment-post-card > p {
+  font-size: 1.1rem;
+}
+.apartment-post-status {
+  display: flex;
+  justify-content: space-between;
+}
+.apartment-post-status > p {
+  color: gray;
+}
+.welcome_text {
+  margin-top: 10px;
+  padding-left: 29px;
+  font-size: 20px;
+  font-weight: 900;
+}

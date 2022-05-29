@@ -53,17 +53,22 @@ class Header extends React.Component {
                 className="nav-item nav-link text-white mt-3"
                 onClick={() => this.handleNavigation("/home")}
               ></li>
+              {this.props.user.login_status === "SUCCESS" ? (
+                <li
+                  className="nav-item nav-link text-white mt-3"
+                  onClick={() => this.handleNavigation("/add")}
+                >
+                  Add A Apartment
+                </li>
+              ) : (
+                ""
+              )}
+
               <li
                 className="nav-item nav-link text-white mt-3"
-                onClick={() => this.handleNavigation("/aboutUs")}
+                onClick={() => this.handleNavigation("/apartment")}
               >
-                About Us
-              </li>
-              <li
-                className="nav-item nav-link text-white mt-3"
-                onClick={() => this.handleNavigation("/bulkOrder")}
-              >
-                Bulk Order
+                Show All Apartments
               </li>
               <li
                 className="nav-item nav-link text-white mt-3"
